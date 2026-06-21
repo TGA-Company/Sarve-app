@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سرو (SARV) | پروپوزال فنی و مالی سوپر اپلیکیشن هوشمند زیبایی و سلامت</title>
+  <meta name="description" content="پروپوزال حرفه‌ای فنی و مالی سوپر اپلیکیشن هوشمند زیبایی و سلامت سرو — معماری، هوش مصنوعی، زمان‌بندی و قیمت‌گذاری شفاف و جزئی." />
+  <meta name="author" content="SARV Studio" />
+  <meta name="theme-color" content="#07201E" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="سرو (SARV) | سوپر اپلیکیشن هوشمند زیبایی و سلامت" />
+  <meta property="og:description" content="پروپوزال فنی و مالی حرفه‌ای — معماری ابری، هوش مصنوعی Gemini، نقشه راه ۵ ماهه و قیمت‌گذاری کاملاً تفکیک‌شده." />
+
+  <!-- Favicon (inline SVG cypress) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 5C23 19 25 31 29 40v11h-4v6h14v-6h-4V40c4-9 6-21-3-35Z' fill='%23D9B871'/%3E%3C/svg%3E" />
+
+  <!-- Fonts (self-hosted — بدون وابستگی به سرور خارجی، مناسب ایران) -->
+  <link rel="preload" href="assets/fonts/vazirmatn-arabic.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Progress bar ===== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="brand" aria-label="سرو">
+        <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F0D9A0" />
+              <stop offset="1" stop-color="#C99A52" />
+            </linearGradient>
+          </defs>
+          <path d="M32 5C23 19 25 31 29 40v11h-4v6h14v-6h-4V40c4-9 6-21-3-35Z" fill="url(#gGold)" />
+        </svg>
+        <span class="brand__text">
+          <strong>سرو</strong>
+          <em>SARV</em>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">چرا سرو</a>
+        <a href="#portfolio">نمونه‌کارها</a>
+        <a href="#pricing">پلن و قیمت</a>
+        <a href="#ai">هوش مصنوعی</a>
+        <a href="#roadmap">نقشه راه</a>
+        <a href="#payment">پرداخت</a>
+      </nav>
+
+      <a href="#pricing" class="btn btn--gold nav__cta">مشاهده پلن‌ها</a>
+      <button class="nav__burger" id="burger" aria-label="منو" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__glow hero__glow--gold"></div>
+    <div class="hero__glow hero__glow--emerald"></div>
+    <div class="hero__grid"></div>
+
+    <div class="hero__content reveal">
+      <span class="pill"><span class="pill__dot"></span> پروپوزال فنی و مالی — نسخه ۱۴۰۵</span>
+      <h1 class="hero__title">
+        سوپر اپلیکیشن هوشمند<br />
+        <span class="grad-text">زیبایی و سلامت سرو</span>
+      </h1>
+      <p class="hero__sub">
+        یک اکوسیستم کامل از رزرو نوبت، مشاور هوشمند، آنالیز پوست و لبخند با هوش مصنوعی،
+        شبیه‌سازی چهره، کیف پول و باشگاه وفاداری — طراحی‌شده برای تبدیل کلینیک شما به یک پلتفرم درآمدزای ملی.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#pricing" class="btn btn--gold btn--lg">بررسی قیمت تفکیک‌شده</a>
+        <a href="#roadmap" class="btn btn--ghost btn--lg">مشاهده نقشه راه</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num" data-count="3.5" data-suffix=" میلیارد">۰</span>
+          <span class="stat__label">ارزش کل پلتفرم (تومان)</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="10" data-suffix=" ماژول">۰</span>
+          <span class="stat__label">ماژول مستقل و مقیاس‌پذیر</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="5" data-suffix=" ماه">۰</span>
+          <span class="stat__label">تا تحویل نسخه کامل</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="3" data-suffix=" ماه">۰</span>
+          <span class="stat__label">پشتیبانی فنی رایگان</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===== Trust band ===== -->
+  <section class="trust">
+    <div class="container">
+      <p class="trust__title">مجموعه فنی ما با این تکنولوژی‌ها پلتفرم شما را می‌سازد</p>
+      <div class="trust__logos">
+        <span class="techchip">Flutter</span>
+        <span class="techchip">React / Next.js</span>
+        <span class="techchip">Node.js</span>
+        <span class="techchip">Python</span>
+        <span class="techchip">PostgreSQL</span>
+        <span class="techchip">Gemini AI</span>
+        <span class="techchip">PWA</span>
+        <span class="techchip">درگاه بانکی</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About / Why ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">چرا سرو</span>
+        <h2 class="section__title">یک تیم، یک مسئولیت، تحویل صفر تا صد</h2>
+        <p class="section__lead">
+          ما صرفاً کدنویس نیستیم؛ معمار محصول هستیم. هر تومانی که هزینه می‌کنید روی یک قابلیت قابل اندازه‌گیری
+          سرمایه‌گذاری می‌شود — با مستندسازی، تست و تحویل مرحله‌به‌مرحله.
+        </p>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <div class="feature__icon">◈</div>
+          <h3>معماری مقیاس‌پذیر</h3>
+          <p>پایه‌ای که از ۱۰۰ کاربر تا میلیون‌ها کاربر بدون بازنویسی رشد می‌کند؛ میکروسرویس و دیتابیس بهینه.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">✦</div>
+          <h3>هوش مصنوعی واقعی</h3>
+          <p>آنالیز پوست و لبخند و شبیه‌سازی چهره با مدل‌های قدرتمند Gemini — نه دموی نمایشی، بلکه قابل اتکا.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">◆</div>
+          <h3>قیمت‌گذاری شفاف</h3>
+          <p>هزینه‌ها تا سطح هر زیرماژول تفکیک شده‌اند تا دقیقاً بدانید بابت چه چیزی پرداخت می‌کنید.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">❖</div>
+          <h3>پرداخت مرحله‌ای</h3>
+          <p>۴ قسط متصل به دستاوردهای واقعی پروژه؛ هر پرداخت پس از تحویل یک بخش قابل مشاهده.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">◉</div>
+          <h3>بدون تحریم اپل</h3>
+          <p>نسخه موبایل به‌صورت PWA ساخته می‌شود؛ کاربران iOS و اندروید بدون نیاز به استور نصب می‌کنند.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="feature__icon">✪</div>
+          <h3>۳ ماه پشتیبانی رایگان</h3>
+          <p>پس از تحویل، تیم ما برای تضمین پایداری و رفع باگ‌ها در کنار شماست — بدون هزینه اضافه.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio ===== -->
+  <section class="section section--alt" id="portfolio">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">نمونه‌کارهای اخیر</span>
+        <h2 class="section__title">پروژه‌هایی که تخصص ما را اثبات می‌کنند</h2>
+        <p class="section__lead">
+          چند نمونه از پلتفرم‌های زنده‌ای که طراحی و توسعه داده‌ایم — روی هر کارت بزنید تا نسخهٔ واقعی را ببینید.
+        </p>
+      </div>
+
+      <div class="portfolio">
+
+        <!-- 1) Honeyland -->
+        <article class="pcard reveal" data-accent="gold">
+          <a class="pcard__visual" href="https://honey.land" target="_blank" rel="noopener" aria-label="مشاهده زنده Honeyland">
+            <div class="phone">
+              <svg class="phone__ui" viewBox="0 0 132 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رابط پلتفرم Honeyland">
+                <defs>
+                  <clipPath id="hl"><rect width="132" height="238" rx="9"/></clipPath>
+                  <linearGradient id="hlh" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F6C94B"/><stop offset="1" stop-color="#E0930F"/></linearGradient>
+                  <linearGradient id="hlb" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFE9A8"/><stop offset="1" stop-color="#F4B63C"/></linearGradient>
+                </defs>
+                <g clip-path="url(#hl)">
+                  <rect width="132" height="238" fill="#FFF6E0"/>
+                  <rect width="132" height="68" fill="url(#hlh)"/>
+                  <rect x="8" y="9" width="13" height="6" rx="1.6" fill="none" stroke="#5a3d05" stroke-opacity=".55" stroke-width=".8"/><rect x="9.5" y="10.5" width="7" height="3" rx="1" fill="#5a3d05"/>
+                  <text x="122" y="14" text-anchor="end" fill="#5a3d05" font-size="6" font-weight="600">۹:۴۱</text>
+                  <ellipse cx="24" cy="40" rx="9" ry="7" fill="#3a2a08"/><ellipse cx="24" cy="40" rx="9" ry="7" fill="none"/><path d="M20 40h8M22 35.5h4M22 44.5h4" stroke="#F6C94B" stroke-width="1.4"/><ellipse cx="18" cy="35" rx="4" ry="3" fill="#fff" opacity=".85"/><ellipse cx="30" cy="35" rx="4" ry="3" fill="#fff" opacity=".85"/>
+                  <text x="122" y="36" text-anchor="end" fill="#fff" font-size="12.5" font-weight="800">HONEYLAND</text>
+                  <text x="122" y="52" text-anchor="end" fill="#5a3d05" font-size="6.5" font-weight="600">Play • Watch • Shop</text>
+                  <g>
+                    <rect x="10" y="78" width="55" height="46" rx="10" fill="url(#hlb)"/><circle cx="24" cy="95" r="7" fill="#fff" opacity=".8"/><text x="59" y="118" text-anchor="end" fill="#5a3d05" font-size="6" font-weight="700">Crop Drop</text>
+                    <rect x="67" y="78" width="55" height="46" rx="10" fill="#FBD978"/><circle cx="81" cy="95" r="7" fill="#fff" opacity=".8"/><text x="116" y="118" text-anchor="end" fill="#5a3d05" font-size="6" font-weight="700">Buzz Words</text>
+                    <rect x="10" y="130" width="55" height="46" rx="10" fill="#FBD978"/><circle cx="24" cy="147" r="7" fill="#fff" opacity=".8"/><text x="59" y="170" text-anchor="end" fill="#5a3d05" font-size="5.6" font-weight="700">Honey Valleys</text>
+                    <rect x="67" y="130" width="55" height="46" rx="10" fill="url(#hlb)"/><circle cx="81" cy="147" r="7" fill="#fff" opacity=".8"/><text x="116" y="170" text-anchor="end" fill="#5a3d05" font-size="6" font-weight="700">Shop</text>
+                  </g>
+                  <rect x="0" y="214" width="132" height="24" fill="#fff"/><rect x="0" y="214" width="132" height="1" fill="#F0E3C2"/>
+                  <circle cx="22" cy="226" r="3.4" fill="#E0930F"/><circle cx="58" cy="226" r="3.4" fill="#E7D7AE"/><circle cx="94" cy="226" r="3.4" fill="#E7D7AE"/><circle cx="118" cy="226" r="3.4" fill="#E7D7AE"/>
+                </g>
+              </svg>
+            </div>
+            <span class="pcard__tag">بازی و سرگرمی</span>
+          </a>
+          <div class="pcard__body">
+            <div class="pcard__top"><h3>Honeyland</h3><span class="pcard__year">۱۴۰۳</span></div>
+            <p>پلتفرم بین‌المللی بازی و سرگرمی با تم زنبور عسل؛ شامل چند بازی، بخش ویدیو و موزیک و فروشگاه درون‌برنامه‌ای.</p>
+            <div class="pcard__tech"><span>HTML5 Game</span><span>PWA</span><span>Web</span></div>
+            <div class="pcard__metrics"><b>چند بازی</b> به‌همراه ویدیو، موزیک و فروشگاه</div>
+            <a class="pcard__live" href="https://honey.land" target="_blank" rel="noopener">مشاهدهٔ نسخهٔ زنده ↗</a>
+          </div>
+        </article>
+
+        <!-- 2) رختکن -->
+        <article class="pcard reveal" data-accent="emerald">
+          <a class="pcard__visual" href="https://game.rakhtkan.app" target="_blank" rel="noopener" aria-label="مشاهده زنده رختکن">
+            <div class="phone">
+              <svg class="phone__ui" viewBox="0 0 132 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رابط بازی فانتزی رختکن">
+                <defs>
+                  <clipPath id="rk"><rect width="132" height="238" rx="9"/></clipPath>
+                  <linearGradient id="rkh" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1E7A4D"/><stop offset="1" stop-color="#0b3924"/></linearGradient>
+                  <linearGradient id="rkc" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F0D9A0"/><stop offset="1" stop-color="#B8893C"/></linearGradient>
+                </defs>
+                <g clip-path="url(#rk)">
+                  <rect width="132" height="238" fill="#0C1712"/>
+                  <rect width="132" height="58" fill="url(#rkh)"/>
+                  <rect x="8" y="9" width="13" height="6" rx="1.6" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><rect x="9.5" y="10.5" width="7" height="3" rx="1" fill="#fff"/>
+                  <text x="122" y="14" text-anchor="end" fill="#fff" font-size="6" font-weight="600">۹:۴۱</text>
+                  <text x="122" y="34" text-anchor="end" fill="#fff" font-size="11" font-weight="800">رختکن</text>
+                  <text x="122" y="48" text-anchor="end" fill="#bfe6d3" font-size="6">فانتزی جام جهانی ۲۰۲۶</text>
+                  <rect x="8" y="24" width="42" height="15" rx="7.5" fill="#0b3924"/><circle cx="16" cy="31.5" r="3.6" fill="#F0D9A0"/><text x="45" y="36" text-anchor="end" fill="#F0D9A0" font-size="6.5" font-weight="700">۱٬۲۵۰</text>
+                  <rect x="41" y="64" width="50" height="76" rx="9" fill="url(#rkc)"/>
+                  <text x="49" y="80" fill="#3a2a08" font-size="11" font-weight="800">۸۹</text><text x="49" y="90" fill="#3a2a08" font-size="6" font-weight="700">ST</text>
+                  <text x="84" y="80" text-anchor="end" fill="#3a2a08" font-size="5" font-weight="800">PLT</text>
+                  <circle cx="66" cy="99" r="12" fill="#2a2008" opacity=".22"/><ellipse cx="66" cy="97" rx="8" ry="10" fill="#3a2a08" opacity=".38"/>
+                  <rect x="46" y="122" width="40" height="12" rx="3" fill="#2a2008" opacity=".88"/><text x="66" y="131" text-anchor="middle" fill="#F0D9A0" font-size="6.5" font-weight="700">ستاره تیم</text>
+                  <rect x="8" y="148" width="116" height="30" rx="7" fill="#14241b" stroke="#1f3a2b" stroke-width=".8"/>
+                  <circle cx="22" cy="163" r="8" fill="#233b2d"/><circle cx="110" cy="163" r="8" fill="#233b2d"/>
+                  <rect x="50" y="157" width="13" height="12" rx="3" fill="#0b3924"/><text x="56.5" y="166" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">۲</text>
+                  <rect x="69" y="157" width="13" height="12" rx="3" fill="#0b3924"/><text x="75.5" y="166" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">۱</text>
+                  <rect x="8" y="184" width="116" height="20" rx="10" fill="url(#rkc)"/><text x="66" y="197" text-anchor="middle" fill="#2a1e08" font-size="7.5" font-weight="800">ثبت پیش‌بینی</text>
+                  <rect x="0" y="214" width="132" height="24" fill="#0a130e"/><circle cx="22" cy="226" r="3.4" fill="#F0D9A0"/><circle cx="58" cy="226" r="3.4" fill="#33493d"/><circle cx="94" cy="226" r="3.4" fill="#33493d"/><circle cx="118" cy="226" r="3.4" fill="#33493d"/>
+                </g>
+              </svg>
+            </div>
+            <span class="pcard__tag">فانتزی فوتبال</span>
+          </a>
+          <div class="pcard__body">
+            <div class="pcard__top"><h3>رختکن</h3><span class="pcard__year">۱۴۰۴</span></div>
+            <p>بازی فانتزی فوتبال جام جهانی ۲۰۲۶: پیش‌بینی مسابقات، باز کردن پک کارت بازیکنان، چیدن ترکیب و رقابت در جدول.</p>
+            <div class="pcard__tech"><span>PWA</span><span>React</span><span>مایکت</span></div>
+            <div class="pcard__metrics"><b>۵۰۰٬۰۰۰٬۰۰۰ ت</b> مجموع جوایز رویداد</div>
+            <a class="pcard__live" href="https://game.rakhtkan.app" target="_blank" rel="noopener">مشاهدهٔ نسخهٔ زنده ↗</a>
+          </div>
+        </article>
+
+        <!-- 3) گلزن -->
+        <article class="pcard reveal" data-accent="rose">
+          <a class="pcard__visual" href="https://goolzan.ir" target="_blank" rel="noopener" aria-label="مشاهده زنده گلزن">
+            <div class="phone">
+              <svg class="phone__ui" viewBox="0 0 132 238" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رابط پلتفرم پیش‌بینی فوتبال گلزن">
+                <defs>
+                  <clipPath id="gz"><rect width="132" height="238" rx="9"/></clipPath>
+                  <linearGradient id="gzh" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2E9E5A"/><stop offset="1" stop-color="#0e4b2c"/></linearGradient>
+                  <linearGradient id="gzc" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F0D9A0"/><stop offset="1" stop-color="#C99A52"/></linearGradient>
+                </defs>
+                <g clip-path="url(#gz)">
+                  <rect width="132" height="238" fill="#0B2418"/>
+                  <rect width="132" height="46" fill="url(#gzh)"/>
+                  <rect x="8" y="9" width="13" height="6" rx="1.6" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/><rect x="9.5" y="10.5" width="7" height="3" rx="1" fill="#fff"/>
+                  <text x="122" y="14" text-anchor="end" fill="#fff" font-size="6" font-weight="600">۹:۴۱</text>
+                  <text x="122" y="30" text-anchor="end" fill="#fff" font-size="11" font-weight="800">گلزن</text>
+                  <text x="122" y="41" text-anchor="end" fill="#c5e8d4" font-size="6">پیش‌بینی نتایج فوتبال</text>
+                  <rect x="8" y="52" width="116" height="50" rx="8" fill="#15622f"/>
+                  <line x1="66" y1="52" x2="66" y2="102" stroke="#fff" stroke-opacity=".45" stroke-width=".8"/>
+                  <circle cx="66" cy="77" r="9" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width=".8"/>
+                  <rect x="8" y="64" width="13" height="26" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width=".8"/>
+                  <rect x="111" y="64" width="13" height="26" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width=".8"/>
+                  <text x="124" y="116" text-anchor="end" fill="#9ec2ae" font-size="6.5" font-weight="700">مسابقات امروز</text>
+                  <rect x="8" y="120" width="116" height="28" rx="6" fill="#10311f"/>
+                  <circle cx="21" cy="134" r="7" fill="#1c4630"/><circle cx="111" cy="134" r="7" fill="#1c4630"/>
+                  <rect x="51" y="128" width="12" height="12" rx="3" fill="#0e4b2c"/><text x="57" y="137" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">۲</text>
+                  <rect x="69" y="128" width="12" height="12" rx="3" fill="#0e4b2c"/><text x="75" y="137" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700">۱</text>
+                  <rect x="8" y="152" width="116" height="28" rx="6" fill="#10311f"/>
+                  <circle cx="21" cy="166" r="7" fill="#1c4630"/><circle cx="111" cy="166" r="7" fill="#1c4630"/>
+                  <rect x="51" y="160" width="12" height="12" rx="3" fill="none" stroke="#F0D9A0" stroke-width="1"/><text x="57" y="169" text-anchor="middle" fill="#F0D9A0" font-size="6.5" font-weight="700">؟</text>
+                  <rect x="69" y="160" width="12" height="12" rx="3" fill="none" stroke="#F0D9A0" stroke-width="1"/><text x="75" y="169" text-anchor="middle" fill="#F0D9A0" font-size="6.5" font-weight="700">؟</text>
+                  <rect x="8" y="186" width="116" height="20" rx="10" fill="url(#gzc)"/><text x="66" y="199" text-anchor="middle" fill="#2a1e08" font-size="7.5" font-weight="800">ثبت پیش‌بینی</text>
+                  <rect x="0" y="214" width="132" height="24" fill="#081f14"/><circle cx="22" cy="226" r="3.4" fill="#F0D9A0"/><circle cx="58" cy="226" r="3.4" fill="#2c4538"/><circle cx="94" cy="226" r="3.4" fill="#2c4538"/><circle cx="118" cy="226" r="3.4" fill="#2c4538"/>
+                </g>
+              </svg>
+            </div>
+            <span class="pcard__tag">پیش‌بینی فوتبال</span>
+          </a>
+          <div class="pcard__body">
+            <div class="pcard__top"><h3>گلزن</h3><span class="pcard__year">۱۴۰۳</span></div>
+            <p>پلتفرم پیش‌بینی و رقابت فوتبالی فارسی؛ پیش‌بینی نتایج مسابقات، کسب امتیاز و بالا رفتن در جدول هفتگی.</p>
+            <div class="pcard__tech"><span>Web</span><span>PWA</span><span>فارسی</span></div>
+            <div class="pcard__metrics"><b>رقابت زنده</b> پیش‌بینی مسابقات فوتبال</div>
+            <a class="pcard__live" href="https://goolzan.ir" target="_blank" rel="noopener">مشاهدهٔ نسخهٔ زنده ↗</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="portfolio__note">
+        نمونه‌ای از پلتفرم‌های زندهٔ ما در حوزهٔ بازی، فانتزی اسپورت و سرگرمی — همگی هم‌اکنون در دسترس کاربران هستند.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">قیمت‌گذاری تفکیک‌شده</span>
+        <h2 class="section__title">دقیقاً بدانید بابت هر بخش چقدر پرداخت می‌کنید</h2>
+        <p class="section__lead">
+          پروژه به انتخاب شما در دو حالت قابل اجراست. هر ماژول تا سطح زیرماژول قیمت‌گذاری شده تا کنترل کامل بودجه در دست شما باشد.
+        </p>
+      </div>
+
+      <!-- Tab switch -->
+      <div class="tabs reveal" role="tablist">
+        <button class="tab is-active" id="tab-mvp" data-panel="panel-mvp" role="tab">
+          نسخه اولیه (MVP)
+          <span class="tab__price">۱٫۵ میلیارد</span>
+        </button>
+        <button class="tab" id="tab-full" data-panel="panel-full" role="tab">
+          سوپر اپلیکیشن کامل
+          <span class="tab__price">۳٫۵ میلیارد</span>
+        </button>
+      </div>
+
+      <!-- Panel: MVP -->
+      <div class="panel is-active" id="panel-mvp" role="tabpanel">
+        <div class="panel__banner">
+          <div>
+            <h3>راه‌اندازی سریع و ورود به بازار</h3>
+            <p>هسته حیاتی پلتفرم به‌همراه موتورهای هوش مصنوعی متنی و تصویری — آماده درآمدزایی ظرف ۲ تا ۳ ماه.</p>
+          </div>
+          <div class="panel__deliver">
+            <span class="panel__deliver-label">زمان تحویل</span>
+            <span class="panel__deliver-val">۲ تا ۳ ماه</span>
+          </div>
+        </div>
+
+        <div class="modules">
+          <!-- Module 1 -->
+          <details class="module" open>
+            <summary>
+              <span class="module__no">۰۱</span>
+              <span class="module__name">زیرساخت، ثبت‌نام و داشبورد اصلی</span>
+              <span class="module__sum">۳۴۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>معماری Backend، راه‌اندازی سرور، دیتابیس و DevOps</span><b>۱۱۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>احراز هویت و ثبت‌نام با موبایل (OTP + لایه امنیتی)</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>داشبورد اصلی کاربر (خلاصه کیف پول و نوبت‌ها)</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>سیستم ردیابی لینک بلاگرها (Referral Tracking)</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+
+          <!-- Module 2 -->
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۲</span>
+              <span class="module__name">مرکز هوش مصنوعی متنی و تصویری</span>
+              <span class="module__sum">۵۱۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>مشاور هوشمند متنی (چت‌بات + پرامپت‌اینجینیرینگ Gemini)</span><b>۱۴۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>آنالیزور لبخند و دندان (تشخیص ناهنجاری)</span><b>۱۶۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>آنالیزور پوست (زردی، لک، آکنه و چروک)</span><b>۱۵۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>زیرساخت پردازش، آپلود و ذخیره‌سازی تصویر</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+
+          <!-- Module 3 -->
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۳</span>
+              <span class="module__name">سیستم خدمات و رزرو نوبت</span>
+              <span class="module__sum">۳۲۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>موتور جستجوی شعب و پزشکان (نقشه و فیلتر)</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>تقویم هوشمند و مدیریت نوبت‌های خالی</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>اتصال درگاه بانکی و پرداخت بیعانه</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>سیستم یادآوری و اطلاع‌رسانی (SMS / Push)</span><b>۵۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+
+          <!-- Module 4 -->
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۴</span>
+              <span class="module__name">پنل‌های مدیریتی</span>
+              <span class="module__sum">۳۳۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>پنل مرکزی کلینیک (منشی، مدیریت نوبت و بیماران)</span><b>۱۳۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>پنل ادمین کل (مدیریت محتوا، کاربران و گزارش‌ها)</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>پنل اختصاصی بلاگرها (داشبورد درآمد و تسویه)</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="total-bar">
+          <span class="total-bar__label">جمع کل توسعه نسخه MVP</span>
+          <span class="total-bar__val">۱٬۵۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span>
+        </div>
+      </div>
+
+      <!-- Panel: Full -->
+      <div class="panel" id="panel-full" role="tabpanel" hidden>
+        <div class="panel__banner panel__banner--gold">
+          <div>
+            <h3>پیاده‌سازی کامل اکوسیستم</h3>
+            <p>تمام بخش‌های MVP به‌علاوه شبیه‌ساز، گذرنامه زیبایی، مارکتینگ شبکه‌ای، وفاداری، فروشگاه و خدمات VIP.</p>
+          </div>
+          <div class="panel__deliver">
+            <span class="panel__deliver-label">زمان تحویل</span>
+            <span class="panel__deliver-val">۵ ماه</span>
+          </div>
+        </div>
+
+        <h4 class="phase-tag">فاز یک — هسته حیاتی (MVP)</h4>
+        <div class="modules">
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۱</span>
+              <span class="module__name">زیرساخت، ثبت‌نام و داشبورد اصلی</span>
+              <span class="module__sum">۳۴۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>معماری Backend، راه‌اندازی سرور، دیتابیس و DevOps</span><b>۱۱۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>احراز هویت و ثبت‌نام با موبایل (OTP + لایه امنیتی)</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>داشبورد اصلی کاربر (خلاصه کیف پول و نوبت‌ها)</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>سیستم ردیابی لینک بلاگرها (Referral Tracking)</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۲</span>
+              <span class="module__name">مرکز هوش مصنوعی متنی و تصویری</span>
+              <span class="module__sum">۵۱۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>مشاور هوشمند متنی (چت‌بات + پرامپت‌اینجینیرینگ Gemini)</span><b>۱۴۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>آنالیزور لبخند و دندان (تشخیص ناهنجاری)</span><b>۱۶۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>آنالیزور پوست (زردی، لک، آکنه و چروک)</span><b>۱۵۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>زیرساخت پردازش، آپلود و ذخیره‌سازی تصویر</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۳</span>
+              <span class="module__name">سیستم خدمات و رزرو نوبت</span>
+              <span class="module__sum">۳۲۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>موتور جستجوی شعب و پزشکان (نقشه و فیلتر)</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>تقویم هوشمند و مدیریت نوبت‌های خالی</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>اتصال درگاه بانکی و پرداخت بیعانه</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>سیستم یادآوری و اطلاع‌رسانی (SMS / Push)</span><b>۵۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۴</span>
+              <span class="module__name">پنل‌های مدیریتی</span>
+              <span class="module__sum">۳۳۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>پنل مرکزی کلینیک (منشی، مدیریت نوبت و بیماران)</span><b>۱۳۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>پنل ادمین کل (مدیریت محتوا، کاربران و گزارش‌ها)</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>پنل اختصاصی بلاگرها (داشبورد درآمد و تسویه)</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="subtotal-line"><span>جمع فاز یک (MVP)</span><b>۱٬۵۰۰٬۰۰۰٬۰۰۰</b></div>
+
+        <h4 class="phase-tag phase-tag--gold">فاز دو — ماژول‌های پیشرفته</h4>
+        <div class="modules">
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۵</span>
+              <span class="module__name">مرکز شبیه‌سازی پیشرفته (Simulator)</span>
+              <span class="module__sum">۴۸۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>شبیه‌سازی سفید کردن و اصلاح فرم دندان</span><b>۱۶۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>شبیه‌سازی تغییر فک و طراحی چهره (Face Design)</span><b>۲۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>موتور Before / After و رندر مقایسه‌ای</span><b>۱۲۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۶</span>
+              <span class="module__name">گذرنامه زیبایی و سوابق (Passport)</span>
+              <span class="module__sum">۲۳۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>آرشیو امن تصاویر، اسکن و رادیوگرافی</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>مدیریت مدارک و پرونده پزشکی</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>تایم‌لاین درمان و گزارش پیشرفت</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۷</span>
+              <span class="module__name">سیستم مالی و مارکتینگ شبکه‌ای (Referral)</span>
+              <span class="module__sum">۴۰۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>کیف پول پیشرفته، تراکنش و تسویه</span><b>۱۲۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>خرید اقساطی (BNPL) و اعتبارسنجی</span><b>۱۱۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>سیستم معرفی درختی / شبکه‌ای و پورسانت</span><b>۱۷۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۸</span>
+              <span class="module__name">باشگاه مشتریان و وفاداری (Loyalty)</span>
+              <span class="module__sum">۲۵۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>سیستم رتبه‌بندی کاربران (نقره‌ای تا الماس)</span><b>۱۰۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>موتور ماموریت‌ها و گیمیفیکیشن</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>مدیریت امتیاز، کوپن و پاداش</span><b>۶۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۰۹</span>
+              <span class="module__name">فروشگاه و آکادمی (Marketplace & Academy)</span>
+              <span class="module__sum">۳۶۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>فروشگاه (سبد خرید، درگاه و لجستیک)</span><b>۱۵۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>پنل مدیریت محصولات و موجودی</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>آکادمی (مقالات، ویدیو و دوره‌های آموزشی)</span><b>۱۲۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+          <details class="module">
+            <summary>
+              <span class="module__no">۱۰</span>
+              <span class="module__name">خدمات VIP و توریسم درمانی (Concierge)</span>
+              <span class="module__sum">۲۸۰٬۰۰۰٬۰۰۰</span>
+              <span class="module__chev">⌄</span>
+            </summary>
+            <ul class="items">
+              <li><span>دستیار شخصی و خدمات VIP</span><b>۹۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>رزرو هتل، ترانسفر و خدمات سفر</span><b>۱۱۰٬۰۰۰٬۰۰۰</b></li>
+              <li><span>مدیریت بیماران بین‌المللی (ویزا و مترجم)</span><b>۸۰٬۰۰۰٬۰۰۰</b></li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="subtotal-line"><span>جمع فاز دو (ماژول‌های پیشرفته)</span><b>۲٬۰۰۰٬۰۰۰٬۰۰۰</b></div>
+
+        <div class="total-bar total-bar--gold">
+          <span class="total-bar__label">جمع کل توسعه صفر تا صد پلتفرم</span>
+          <span class="total-bar__val">۳٬۵۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span>
+        </div>
+      </div>
+
+      <p class="gift-note">🛠 هدیه: هر دو حالت قرارداد شامل <b>۳ ماه پشتیبانی فنی رایگان</b> جهت تضمین پایداری سیستم است.</p>
+    </div>
+  </section>
+
+  <!-- ===== AI methods ===== -->
+  <section class="section section--alt" id="ai">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">روش اجرای هوش مصنوعی</span>
+        <h2 class="section__title">کدام روش برای شما به‌صرفه‌تر است؟</h2>
+        <p class="section__lead">برای آنالیزور پوست، چهره و لبخند دو مسیر پیش روی شماست. پیشنهاد فنی ما روش ابری است.</p>
+      </div>
+
+      <div class="ai-cards">
+        <article class="ai-card ai-card--featured reveal">
+          <span class="ai-card__badge">پیشنهاد فنی ما 💡</span>
+          <h3>روش اول: هوش مصنوعی ابری گوگل (Gemini API)</h3>
+          <p class="ai-card__desc">سیستم به هوش مصنوعی قدرتمند گوگل متصل می‌شود؛ بدون نیاز به سخت‌افزار گران‌قیمت.</p>
+          <ul class="ai-card__list">
+            <li><span class="dot dot--ok"></span> هزینه خرید سرور: <b>صفر تومان</b></li>
+            <li><span class="dot dot--ok"></span> هزینه جاری: سرور ایران ماهانه ۳ تا ۵ میلیون</li>
+            <li><span class="dot dot--ok"></span> مصرف واقعی گوگل: ماهانه ۵۰ تا ۱۰۰ دلار</li>
+            <li><span class="dot dot--ok"></span> راه‌اندازی سریع، دقت بالا، بدون هزینه اولیه</li>
+          </ul>
+        </article>
+
+        <article class="ai-card reveal">
+          <h3>روش دوم: سرور اختصاصی برای کلینیک</h3>
+          <p class="ai-card__desc">مدل‌های هوش مصنوعی مستقیماً روی سرور خودتان نصب می‌شوند؛ داده‌ها کاملاً نزد شما می‌ماند.</p>
+          <ul class="ai-card__list">
+            <li><span class="dot dot--warn"></span> سخت‌افزار اولیه: ۲۵۰ تا ۳۵۰ میلیون تومان</li>
+            <li><span class="dot dot--warn"></span> سرور فیزیکی با کارت گرافیک صنعتی (RTX 3090)</li>
+            <li><span class="dot dot--warn"></span> نگهداری دیتاسنتر: ماهانه ۲۵ تا ۳۵ میلیون</li>
+            <li><span class="dot dot--ok"></span> بدون پرداخت دلاری، استقلال کامل داده</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Roadmap ===== -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">نقشه راه</span>
+        <h2 class="section__title">مسیر ۵ ماهه تا تحویل کامل</h2>
+        <p class="section__lead">هر فاز با خروجی مشخص و قابل تحویل؛ پرداخت‌ها به همین دستاوردها گره خورده‌اند.</p>
+      </div>
+
+      <!-- Gantt -->
+      <div class="gantt reveal">
+        <div class="gantt__head">
+          <span class="gantt__corner">کارگروه‌ها</span>
+          <span>ماه ۱</span><span>ماه ۲</span><span>ماه ۳</span><span>ماه ۴</span><span>ماه ۵</span>
+        </div>
+        <div class="gantt__row">
+          <span class="gantt__label">طراحی و معماری</span>
+          <div class="gantt__track"><i class="bar bar--gold" style="--s:1;--e:2"></i></div>
+        </div>
+        <div class="gantt__row">
+          <span class="gantt__label">هسته و رزرو نوبت</span>
+          <div class="gantt__track"><i class="bar bar--em" style="--s:2;--e:4"></i></div>
+        </div>
+        <div class="gantt__row">
+          <span class="gantt__label">هوش مصنوعی</span>
+          <div class="gantt__track"><i class="bar bar--rose" style="--s:3;--e:5"></i></div>
+        </div>
+        <div class="gantt__row">
+          <span class="gantt__label">اکوسیستم مالی و فروشگاه</span>
+          <div class="gantt__track"><i class="bar bar--em" style="--s:4;--e:6"></i></div>
+        </div>
+        <div class="gantt__row">
+          <span class="gantt__label">شبیه‌ساز، VIP و تست نهایی</span>
+          <div class="gantt__track"><i class="bar bar--gold" style="--s:5;--e:6"></i></div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <ol class="timeline">
+        <li class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__card">
+            <span class="tl__month">ماه ۱</span>
+            <h3>کشف، طراحی و معماری</h3>
+            <p>طراحی UI/UX تمام صفحات، نقشه‌کشی دیتابیس، تعریف معماری و طراحی هویت بصری برند.</p>
+            <span class="tl__pay">↳ متصل به قسط اول (۳۰٪)</span>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__card">
+            <span class="tl__month">ماه ۲</span>
+            <h3>هسته و ثبت‌نام کاربران</h3>
+            <p>کدنویسی Backend، احراز هویت، داشبورد کاربر و سیستم رزرو نوبت با اتصال تقویم.</p>
+            <span class="tl__pay">↳ متصل به قسط دوم (۲۵٪)</span>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__card">
+            <span class="tl__month">ماه ۳</span>
+            <h3>هوش مصنوعی</h3>
+            <p>اتصال مشاور متنی، آنالیزور پوست و لبخند و راه‌اندازی موتور اولیه شبیه‌سازی.</p>
+            <span class="tl__pay">↳ متصل به قسط سوم (۲۵٪)</span>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__card">
+            <span class="tl__month">ماه ۴</span>
+            <h3>اکوسیستم درآمدزایی</h3>
+            <p>کیف پول، مارکتینگ شبکه‌ای، باشگاه وفاداری، فروشگاه و آکادمی.</p>
+            <span class="tl__pay">↳ بخشی از فاز دو</span>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__card">
+            <span class="tl__month">ماه ۵</span>
+            <h3>تکمیل، تست و تحویل</h3>
+            <p>شبیه‌ساز پیشرفته، گذرنامه زیبایی، خدمات VIP، اتصال درگاه بانکی، تست نهایی و انتشار.</p>
+            <span class="tl__pay">↳ متصل به قسط چهارم و تسویه (۲۰٪)</span>
+          </div>
+        </li>
+        <li class="tl tl--gift reveal">
+          <span class="tl__dot tl__dot--gift"></span>
+          <div class="tl__card tl__card--gift">
+            <span class="tl__month">ماه ۶ تا ۸</span>
+            <h3>پشتیبانی فنی رایگان 🎁</h3>
+            <p>۳ ماه پشتیبانی، رفع باگ و تضمین پایداری سیستم پس از تحویل — بدون هزینه.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Payment plan ===== -->
+  <section class="section section--alt" id="payment">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">شرایط پرداخت</span>
+        <h2 class="section__title">پلان اقساطی متصل به دستاورد</h2>
+        <p class="section__lead">هر قسط پس از تحویل یک بخش قابل مشاهده پرداخت می‌شود؛ ریسک شما حداقل است.</p>
+      </div>
+
+      <div class="pay-steps">
+        <article class="pstep reveal">
+          <div class="pstep__pct">۳۰٪</div>
+          <h3>قسط اول — پیش‌پرداخت</h3>
+          <p>شروع طراحی گرافیکی صفحات (UI/UX) و نقشه‌کشی دیتابیس.</p>
+          <div class="pstep__amt"><span>کامل:</span> ۱٬۰۵۰٬۰۰۰٬۰۰۰ <small>/ MVP: ۴۵۰٬۰۰۰٬۰۰۰</small></div>
+        </article>
+        <article class="pstep reveal">
+          <div class="pstep__pct">۲۵٪</div>
+          <h3>قسط دوم</h3>
+          <p>پس از کدنویسی ظاهر اپلیکیشن و بخش ثبت‌نام کاربران.</p>
+          <div class="pstep__amt"><span>کامل:</span> ۸۷۵٬۰۰۰٬۰۰۰ <small>/ MVP: ۳۷۵٬۰۰۰٬۰۰۰</small></div>
+        </article>
+        <article class="pstep reveal">
+          <div class="pstep__pct">۲۵٪</div>
+          <h3>قسط سوم</h3>
+          <p>پس از برنامه‌نویسی و اتصال بخش‌های هوش مصنوعی (چت و آنالیز تصویر).</p>
+          <div class="pstep__amt"><span>کامل:</span> ۸۷۵٬۰۰۰٬۰۰۰ <small>/ MVP: ۳۷۵٬۰۰۰٬۰۰۰</small></div>
+        </article>
+        <article class="pstep reveal">
+          <div class="pstep__pct">۲۰٪</div>
+          <h3>قسط چهارم — تسویه</h3>
+          <p>پس از اتصال درگاه بانکی، تست نهایی و تحویل کامل.</p>
+          <div class="pstep__amt"><span>کامل:</span> ۷۰۰٬۰۰۰٬۰۰۰ <small>/ MVP: ۳۰۰٬۰۰۰٬۰۰۰</small></div>
+        </article>
+      </div>
+
+      <div class="notes">
+        <p class="note"><b>تبصره ۱:</b> در صورت انتخاب «هوش مصنوعی بومی»، تهیه سرور و سخت‌افزار بر عهده کارفرماست و تحویل این بخش روی سرور دمو (لوکال) مجری ملاک پرداخت خواهد بود.</p>
+        <p class="note"><b>تبصره ۲:</b> دریافت نماد اعتماد (اینماد) و مجوزهای درگاه بانکی بر عهده کارفرماست و مجری صرفاً اتصال فنی آن را انجام می‌دهد.</p>
+        <p class="note"><b>تبصره ۳ (افزودن قابلیت):</b> هر فیچر یا قابلیت جدیدِ خارج از این فهرست، با توافق طرفین و بر اساس برآورد مدت‌زمان توسعه (نفر-ساعت) محاسبه و به‌صورت الحاقیه به قرارداد افزوده می‌شود.</p>
+        <p class="note"><b>تبصره ۴ (پشتیبانی بلندمدت):</b> پشتیبانی و نگهداری پس از پایان دورهٔ ۳ ماههٔ رایگان، پس از تحویل فاز تکمیل و بر اساس توافق طرفین تعیین و قیمت‌گذاری می‌شود.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 5C23 19 25 31 29 40v11h-4v6h14v-6h-4V40c4-9 6-21-3-35Z" fill="url(#gGold)" />
+        </svg>
+        <span><strong>سرو</strong> — سوپر اپلیکیشن هوشمند زیبایی و سلامت</span>
+      </div>
+      <p class="footer__copy">© ۱۴۰۵ — تمامی حقوق محفوظ است. پروپوزال فنی و مالی.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

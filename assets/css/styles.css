@@ -291,6 +291,42 @@ a.pcard__visual { cursor: pointer; text-decoration: none; }
 .portfolio__note { text-align: center; margin-top: 28px; font-size: 13px; color: var(--muted-2); }
 
 /* ---------- Pricing ---------- */
+.plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-bottom: 40px; }
+.plan {
+  position: relative; padding: 32px 28px; border-radius: var(--radius-lg);
+  background: var(--surface); border: 1px solid var(--border-soft);
+  transition: transform .4s var(--ease), border-color .3s;
+}
+.plan:hover { transform: translateY(-5px); border-color: var(--border); }
+.plan--featured {
+  background: linear-gradient(160deg, rgba(201,154,82,.14), rgba(255,255,255,.02));
+  border-color: var(--gold); box-shadow: var(--shadow-gold);
+}
+.plan__badge {
+  position: absolute; top: -13px; inset-inline-end: 24px;
+  background: var(--grad-gold); color: #2A1E08; font-size: 12px; font-weight: 800;
+  padding: 5px 14px; border-radius: 999px; box-shadow: var(--shadow-gold);
+}
+.plan__kicker { display: inline-block; font-size: 12px; font-weight: 700; color: var(--emerald); letter-spacing: .5px; margin-bottom: 8px; }
+.plan--featured .plan__kicker { color: var(--gold-2); }
+.plan__name { font-size: 1.3rem; margin-bottom: 14px; }
+.plan__price { font-size: clamp(2.1rem, 5vw, 2.9rem); font-weight: 800; color: var(--gold-2); line-height: 1; margin-bottom: 20px; }
+.plan__price small { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.plan__feats { display: flex; flex-direction: column; gap: 11px; margin-bottom: 24px; }
+.plan__feats li { position: relative; padding-inline-start: 28px; color: var(--muted); font-size: .96rem; }
+.plan__feats li::before {
+  content: "✓"; position: absolute; inset-inline-start: 0; top: 0;
+  width: 19px; height: 19px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 11px; font-weight: 800; color: var(--emerald); background: rgba(47,201,168,.14);
+}
+.plan--featured .plan__feats li::before { color: var(--gold-2); background: rgba(201,154,82,.18); }
+.plan__foot { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--border-soft); }
+.plan__foot span { color: var(--muted-2); font-size: .9rem; }
+.plan__foot b { color: var(--text); font-size: 1.05rem; }
+.pricing__hint { text-align: center; color: var(--muted-2); font-size: .92rem; margin: 0 0 14px; }
+.pay-steps--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+
 .tabs {
   display: flex; gap: 8px; max-width: 560px; margin: 0 auto 40px; padding: 7px;
   background: var(--surface); border: 1px solid var(--border-soft); border-radius: 999px;

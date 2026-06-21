@@ -19,9 +19,18 @@
   <!-- Fonts (self-hosted — بدون وابستگی به سرور خارجی، مناسب ایران) -->
   <link rel="preload" href="assets/fonts/vazirmatn-arabic.woff2" as="font" type="font/woff2" crossorigin />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=2" />
 </head>
 <body>
+
+  <!-- ===== Animated background (drifting glow orbs + beauty shimmer) ===== -->
+  <div class="bg-fx" aria-hidden="true">
+    <span class="orb orb--em"></span>
+    <span class="orb orb--gold"></span>
+    <span class="orb orb--rose"></span>
+    <span class="orb orb--teal"></span>
+    <div class="sparkles" id="sparkles"></div>
+  </div>
 
   <!-- ===== Progress bar ===== -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -85,7 +94,7 @@
 
       <div class="hero__stats">
         <div class="stat">
-          <span class="stat__num" data-count="3.5" data-suffix=" میلیارد">۰</span>
+          <span class="stat__num" data-count="4.7" data-suffix=" میلیارد">۰</span>
           <span class="stat__label">ارزش کل پلتفرم (تومان)</span>
         </div>
         <div class="stat">
@@ -901,6 +910,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=2" defer></script>
 </body>
 </html>

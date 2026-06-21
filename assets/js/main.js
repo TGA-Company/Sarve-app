@@ -6,7 +6,7 @@
 
   /* ---- Persian digit helpers ---- */
   var FA = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-  function toFa(s) { return String(s).replace(/\d/g, function (d) { return FA[d]; }); }
+  function toFa(s) { return String(s).replace(/\d/g, function (d) { return FA[d]; }).replace('.', '٫'); }
   function group(n) { return toFa(Math.round(n).toLocaleString('en-US')); }
 
   /* ---- Scroll progress + sticky nav ---- */
@@ -95,6 +95,24 @@
     counters.forEach(function (c) { cio.observe(c); });
   } else {
     counters.forEach(animateCount);
+  }
+
+  /* ---- Background shimmer (beauty sparkles) ---- */
+  var sparkleBox = document.getElementById('sparkles');
+  if (sparkleBox) {
+    var COUNT = window.innerWidth < 640 ? 14 : 26;
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < COUNT; i++) {
+      var s = document.createElement('span');
+      s.className = 'sparkle';
+      s.style.setProperty('--sz', (Math.random() * 4 + 3).toFixed(1) + 'px');
+      s.style.left = (Math.random() * 100).toFixed(2) + '%';
+      s.style.top = (Math.random() * 100).toFixed(2) + '%';
+      s.style.setProperty('--dur', (Math.random() * 5 + 5).toFixed(1) + 's');
+      s.style.setProperty('--delay', (Math.random() * 7).toFixed(1) + 's');
+      frag.appendChild(s);
+    }
+    sparkleBox.appendChild(frag);
   }
 
   /* ---- Pricing tabs ---- */

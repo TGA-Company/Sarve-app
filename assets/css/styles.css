@@ -278,6 +278,7 @@ img, svg { display: block; max-width: 100%; }
 .pcard[data-accent="gold"] .pcard__visual { background: linear-gradient(135deg, #2a2412, var(--bg-2)); }
 .pcard[data-accent="rose"] .pcard__visual { background: linear-gradient(135deg, #2c1c20, var(--bg-2)); }
 .pcard[data-accent="emerald"] .pcard__visual { background: linear-gradient(135deg, #0f2f2a, var(--bg-2)); }
+.pcard[data-accent="blue"] .pcard__visual { background: linear-gradient(135deg, #12203f, var(--bg-2)); }
 .pcard__tag {
   position: absolute; top: 14px; right: 14px; font-size: 12px; font-weight: 600;
   padding: 5px 13px; border-radius: 999px; background: rgba(0,0,0,.4);
